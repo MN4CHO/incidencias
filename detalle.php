@@ -13,7 +13,7 @@ if (!$id) {
 }
 
 # Consultamos la incidencia en la BD usando el ID de la URL y el del usuario en sesión
-$incidencia = obtenerIncidencia($id, $_SESSION['id_usuario']);
+$incidencia = obtenerIncidencia($conexion, $id, $_SESSION['id_usuario']);
 
 # Si la incidencia no existe o no le pertenece a este usuario, regresamos al listado
 if (!$incidencia) {
@@ -30,7 +30,6 @@ if (!$incidencia) {
 <body>
     <h1>Detalle de la Incidencia</h1>
     <p>Usuario: <?php echo $_SESSION['nombre'] ?> </p>
-    <p>ID de la incidencia: <?= $incidencia['id'] ?> </p>
     <p>Este es el detalle de la incidencia seleccionada.</p> <br>
 
     <!-- border: bordes; cellpadding: espacio interno; cellspacing: espacio entre celdas; width: ancho de la tabla -->

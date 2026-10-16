@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $clave = $_POST['clave'] ?? '';
 
     # Consultamos a la base de datos
-    $datosUsuario = validarUsuario($usuario, $clave);
+    $datosUsuario = buscarUsuario($conexion, $usuario, $clave);
 
     # Si encontró al usuario, guardamos sus datos en la sesión
     if ($datosUsuario !== null) {
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
 # Consultaos las incidencias del usuario    
 require_once 'consultas.php';
-$incidencias = listarIncidencias($_SESSION['id_usuario']);
+$incidencias = listarPorUsuario($conexion, $_SESSION['id_usuario']);
 
 ?>
 
