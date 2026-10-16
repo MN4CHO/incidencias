@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
     # caso contrari lo regresamos al index (login)
     else {
-        header("Location: ../index.php");
+        header("Location: index.php");
         exit;
     }
 }
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 # lo regresamos al index
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
     if ($_SESSION == null) {
-        header("Location: ../index.php");
+        header("Location: index.php");
         exit;
     }
 }
@@ -61,8 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
         </tbody>
     </table>
 
-    <br><br><a href="../view/registrar.php">Registrar Nueva Incidencia</a>
-    <br><br><a href="../includes/cerrarsesion.php">Cerrar Sesión</a>
+    <br><br><a href="registrar.php">Registrar Nueva Incidencia</a>
+    <br><br><a href="cerrarsesion.php">Cerrar Sesión</a>
 
 </body>
 

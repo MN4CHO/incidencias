@@ -4,7 +4,7 @@ session_start();
 
 # si la sesion no esta activa entonces lo regresamos al index
 if ($_SESSION == null) {
-    header("Location: ../index.php");
+    header("Location: index.php");
     exit;
 }
 
@@ -41,8 +41,8 @@ if ($_SESSION == null) {
         </tbody>
     </table>
 
-    <br><br><a href="../view/listar.php">Regresar al listado</a>
-    <br><br><a href="../includes/cerrarsesion.php">Cerrar Sesión</a>
+    <br><br><a href="listar.php">Regresar al listado</a>
+    <br><br><a href="cerrarsesion.php">Cerrar Sesión</a>
 
 </body>
 

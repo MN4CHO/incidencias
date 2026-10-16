@@ -4,7 +4,7 @@ session_start();
 
 # si la sesion no esta activa entonces lo regresamos al index
 if ($_SESSION == null) {
-    header("Location: ../index.php");
+    header("Location: index.php");
     exit;
 }
 
@@ -20,8 +20,8 @@ Aqui va el registar :D
 <body>
     <p>Usuario: <?php echo $_SESSION['usuario'] ?> </p>
 
-    <br><br><a href="../view/listar.php">Cancelar registro</a>
-    <br><br><a href="../includes/cerrarsesion.php">Cerrar Sesión</a>
+    <br><br><a href="listar.php">Cancelar registro</a>
+    <br><br><a href="cerrarsesion.php">Cerrar Sesión</a>
 
 </body>
 

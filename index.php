@@ -4,7 +4,7 @@ session_start();
 
 # si la sesion esta activa entonces lo regresamos al listado
 if ($_SESSION != null) {
-    header("Location: view/listar.php");
+    header("Location: listar.php");
     exit;
 }
 
@@ -27,7 +27,7 @@ echo "Contraseña de prueba: prueba123";
 
     <p> Ingrese sus credenciales para acceder al sistema:</p>
 
-    <form action="view/listar.php" method="POST">
+    <form action="listar.php" method="POST">
 
         <fieldset>
             Usuario: <input type="text" name="usuario"> <br><br>
