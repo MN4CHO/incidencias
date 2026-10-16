@@ -1,13 +1,25 @@
 <?php
-#iniciar el motor de sesiones
-session_start();
+# validar la sesion y llamar al fuchero de consultas
+require_once 'validarsesion.php';
+require_once 'consultas.php';
 
-# si la sesion no esta activa entonces lo regresamos al index
-if ($_SESSION == null) {
-    header("Location: index.php");
+# Obtenemos el ID que viene por la URL (GET)
+$id = $_GET['id'] ?? null;
+
+# Si no enviaron ningún ID, lo regresamos a listar
+if (!$id) {
+    header("Location: listar.php");
     exit;
 }
 
+# Consultamos la incidencia en la BD usando el ID de la URL y el del usuario en sesión
+$incidencia = obtenerIncidencia($id, $_SESSION['id_usuario']);
+
+# Si la incidencia no existe o no le pertenece a este usuario, regresamos al listado
+if (!$incidencia) {
+    header("Location: listar.php");
+    exit;
+}
 ?>
 
 
@@ -17,8 +29,8 @@ if ($_SESSION == null) {
 
 <body>
     <h1>Detalle de la Incidencia</h1>
-    <p>Usuario: <?php echo $_SESSION['usuario'] ?> </p>
-    <p>ID de la incidencia: numero </p>
+    <p>Usuario: <?php echo $_SESSION['nombre'] ?> </p>
+    <p>ID de la incidencia: <?= $incidencia['id'] ?> </p>
     <p>Este es el detalle de la incidencia seleccionada.</p> <br>
 
     <!-- border: bordes; cellpadding: espacio interno; cellspacing: espacio entre celdas; width: ancho de la tabla -->
@@ -33,10 +45,10 @@ if ($_SESSION == null) {
         </thead>
         <tbody>
             <tr>
-                <td>1</td>
-                <td>Calculos Incorrectos </a></td>
-                <td>La aplicación muestra resultados incorrectos en los cálculos financieros.</td>
-                <td>Alta</td>
+                <td><?= $incidencia['id'] ?></td>
+                <td><?= $incidencia['nombre'] ?></td>
+                <td><?= $incidencia['descripcion'] ?></td>
+                <td><?= $incidencia['prioridad'] ?></td>
             </tr>
         </tbody>
     </table>

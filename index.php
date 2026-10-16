@@ -8,10 +8,6 @@ if ($_SESSION != null) {
     exit;
 }
 
-echo "Usuario de prueba: prueba";
-echo "<br>";
-echo "Contraseña de prueba: prueba123";
-
 ?>
 
 
