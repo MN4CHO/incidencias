@@ -24,17 +24,13 @@ if ($_SESSION != null) {
     <p> Ingrese sus credenciales para acceder al sistema:</p>
 
     <form action="listar.php" method="POST">
-
         <fieldset>
             Usuario: <input type="text" name="usuario"> <br><br>
             Contraseña: <input type="password" name="clave"> <br><br>
             <input type="submit" value="Iniciar Sesión">
 
         </fieldset>
-
-
     </form>
-
 
 </body>
 
