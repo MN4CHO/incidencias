@@ -7,6 +7,7 @@
     <head>
     </head>
     <body>
+        <p> Usuario: <?php echo $_SESSION['nombre']; ?></p>
         <h1>Incidencia Creada – 201 Created</h1>
         <h3>La incidencia ha sido creada correctamente.</h3>
         <p>Usuario que registro la incidencia: <?php echo $_SESSION['nombre'] ?> </p>
