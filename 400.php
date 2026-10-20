@@ -22,5 +22,6 @@ http_response_code(400);
 
     <br><br><a href="cerrarsesion.php">Cerrar Sesión</a>
 
+    
 </body>
 </html>
