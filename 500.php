@@ -6,7 +6,6 @@ http_response_code(500);
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
     <title>Error 500 - Internal Server Error</title>
 </head>
 <body>
