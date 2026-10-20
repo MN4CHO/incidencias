@@ -12,9 +12,6 @@ http_response_code(400);
 <body>
     <header>
         <p>Bienvenido <?php echo $_SESSION['nombre'] ?> </p>
-        <nav aria-label="Opciones de usuario">
-            <a href="cerrarsesion.php">Cerrar sesión</a>
-        </nav>
     </header>
 
     <main>
@@ -23,7 +20,7 @@ http_response_code(400);
         <a href="registrar.php">Regresar a registro</a>
     </main>
 
-
     <br><br><a href="cerrarsesion.php">Cerrar Sesión</a>
+
 </body>
 </html>
