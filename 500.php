@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . "/validarsesion.php";
+
 http_response_code(500);
 ?>
 <!DOCTYPE html>
@@ -10,10 +11,7 @@ http_response_code(500);
 </head>
 <body>
     <header>
-        <p>
-            Bienvenido <?php echo htmlspecialchars($_SESSION['nombre']); ?> |
-            <a href="cerrarsesion.php">Cerrar sesión</a>
-        </p>
+              <p>Bienvenido <?php echo $_SESSION['nombre'] ?> </p>
     </header>
 
     <main>
@@ -21,5 +19,7 @@ http_response_code(500);
         <p>Ha ocurrido un problema al comunicarse con la base de datos.</p>
         <a href="cerrarsesion.php">Ir al login</a>
     </main>
+
+    <br><br><a href="cerrarsesion.php">Cerrar Sesión</a>
 </body>
 </html>
